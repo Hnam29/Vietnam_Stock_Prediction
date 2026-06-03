@@ -125,7 +125,7 @@ python main.py
 
 ## Lưu ý quan trọng
 
-- **Adjusted close**: cột `close` phải là giá đã điều chỉnh (split + dividend).
+- **Adjusted close**: cột `close` là giá đã điều chỉnh (split + dividend).
 - **Dữ liệu tối thiểu**: nên có ≥ 3 năm để có đủ hàng sau khi warm-up (MACD cần 26 tuần, BB cần 20 tuần).
 - **Không dự đoán mù**: tín hiệu "PHÂN KỲ" (⚠) có nghĩa hai mô hình không đồng ý — hãy chờ thêm tín hiệu xác nhận.
-- **Đây là công cụ hỗ trợ phân tích**, không phải lời khuyên đầu tư.
+- **Đây là công cụ hỗ trợ phân tích**, không phải lời khuyên đầu tư (disclaimer).
