@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+
+# Output files (models, plots, reports)
+outputs/models/*
+!outputs/models/.gitkeep
+outputs/plots/*
+!outputs/plots/.gitkeep
+outputs/reports/*
+!outputs/reports/.gitkeep
+
+# IDEs and editors
+.vscode/
+.idea/
+.ipynb_checkpoints/
