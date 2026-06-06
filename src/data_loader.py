@@ -31,13 +31,18 @@ def load_csv(filepath: str) -> pd.DataFrame:
     """
     log.info(f"Loading: {filepath}")
     try:
-        df = pd.read_csv(filepath)
+        # utf-8-sig strips the UTF-8 BOM (﻿) that Excel/some crawlers add.
+        # sep=None with python engine auto-detects comma vs semicolon.
+        df = pd.read_csv(filepath, sep=None, engine="python", encoding="utf-8-sig")
     except FileNotFoundError:
         raise FileNotFoundError(
             f"\nData file not found: {filepath}\n"
             "Place your CSV files in the data/ folder.\n"
             "Required columns: time, open, high, low, close, volume"
         )
+
+    # Strip residual BOM / leading whitespace from column names (defensive)
+    df.columns = [c.lstrip("\ufeff").strip() for c in df.columns]
 
     dc = config.DATE_COLUMN
     if dc not in df.columns:
